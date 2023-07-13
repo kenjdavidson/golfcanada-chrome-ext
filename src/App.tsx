@@ -5,15 +5,14 @@ import { useGolfCanada } from './golfcanada/GolfCanadaContext';
 import { UserProfile } from './components/UserProfile';
 
 function App() {
-  const { authToken, client} = useGolfCanada();
+  const golfCanadaContext = useGolfCanada();
 
   const Component = useMemo(() => {
-    return (
-      authToken 
-        ? <LoginForm onLogin={client?.login}></LoginForm> 
-        : <UserProfile user={authToken?.user}></UserProfile>
-    )
-  }, [authToken])
+    if (golfCanadaContext.authToken) 
+      return <UserProfile user={golfCanadaContext.authToken?.user} />
+    else 
+      return <LoginForm onLogin={golfCanadaContext.client?.login} />
+  }, [golfCanadaContext.authToken])
 
   return (
     <Box sx={{

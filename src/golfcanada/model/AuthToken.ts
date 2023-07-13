@@ -1,14 +1,5 @@
+import { AuthTokenResponse } from '../client/AuthTokenResponse';
 import { User } from './User';
-
-export interface AuthTokenResponse {
-  token_type: string;
-  access_token: string;
-  refresh_token: string;
-  expires_in: number;
-  expire_date: string;
-  id_token: string;
-  user: User;
-}
 
 export class AuthToken {
   tokenType: string;

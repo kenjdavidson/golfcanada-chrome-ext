@@ -1,5 +1,6 @@
 import { Axios } from 'axios';
-import { AuthToken, AuthTokenResponse } from '../model/AuthToken';
+import { AuthToken } from '../model/AuthToken';
+import { AuthTokenResponse } from './AuthTokenResponse';
 
 export const GOLF_CANADA_AUTH_TOKEN = 'GOLF_CANADA_AUTH_TOKEN';
 export const GOLF_CANADA_BASE_URL = 'https://scg.golfcanada.ca';

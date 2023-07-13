@@ -8,9 +8,12 @@ export interface GolfCanadaContextType {
   client?: GolfCanadaClient;
 }
 
-const GolfCanadaContext = createContext<GolfCanadaContextType>({} as GolfCanadaContextType);
+const GolfCanadaContext = createContext<GolfCanadaContextType>({
+  authToken: undefined,
+  client: undefined
+});
 
-export const useGolfCanada = () => useContext(GolfCanadaContext);
+export const useGolfCanada = (): GolfCanadaContextType => useContext<GolfCanadaContextType>(GolfCanadaContext);
 
 export const GolfCanadaProvider = ({
   children
